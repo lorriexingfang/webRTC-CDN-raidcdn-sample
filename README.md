@@ -45,8 +45,11 @@ The fourth open browser.
 
 ## 3. Implementation
 
-1\. [**Sign up**] (http://accountsmgr.raidcdn.com/) to RAID CDN. Get instant access to your RAID CDN token. 
-2. Install Node.js [**From Node.js**] (https://nodejs.org/)
+1\. [**Sign up**] (http://accountsmgr.raidcdn.com/) to RAID CDN. 
+
+Get instant access to your RAID CDN token. You will use it in 4.
+
+2\. Install Node.js [**From Node.js**] (https://nodejs.org/)
 
 For Ubuntu/Debian user:
 
