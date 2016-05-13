@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+  <script src="js/bundle-raidcdn-mini-2.21.0.js"></script>
+  <script src="js/bootstrap-progressbar.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    console.log('document ready');
+    playVideoWithRAIDCDN('video1','sXrfefPZ3CSHS2Mwu',true);
+});
+  </script>
+  
+</head>
+<body>
+  <div class="player">
+    <video id='video1' width="100%" preload="none" controls src="http://zifacdn.oss-cn-hangzhou.aliyuncs.com/yosemite-hd.mp4"></video>
+    <div class="log"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,374 @@
+.player {
+    position: relative;
+    width: 100%;
+}
+
+#cdn_stats {
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:1;
+    background:rgba(0, 0, 0, 0.3) !important;
+    pointer-events:none;
+    top:0;
+    left:0;
+    font-family:'Noto Sans', sans-serif;
+    z-index:1000000;
+    text-align:left
+}
+#cdn_stats .progress{
+    background: rgba(0, 0, 0, 0) !important;
+}
+#cdn_stats #gr_tools {
+    display:none
+}
+#cdn_stats div.notice {
+    display:none;
+    position:absolute;
+    font-size:12px;
+    top:5%;
+    right:5%;
+    color:#ff0;
+    text-shadow:-1px 0 .5px rgba(45, 64, 76, 0.5), -1px 1px .5px rgba(45, 64, 76, 0.5), 0 1px .5px rgba(45, 64, 76, 0.5), 1px 1px .5px rgba(45, 64, 76, 0.5), 1px 0 .5px rgba(45, 64, 76, 0.5), 1px -1px .5px rgba(45, 64, 76, 0.5), 0 -1px .5px rgba(45, 64, 76, 0.5), -1px -1px .5px rgba(45, 64, 76, 0.5)
+}
+#cdn_stats div.notice:before {
+    content:'* Simulation mode ('
+}
+#cdn_stats div.notice:after {
+    content:') *'
+}
+#cdn_stats div.notice a {
+    text-decoration:underline;
+    color:#ff0;
+    pointer-events:auto
+}
+#cdn_stats div.settings {
+    font-size:12px;
+    pointer-events:auto;
+    position:absolute;
+    bottom:190px;
+    left:15px;
+    width:calc(100% - 30px);
+    line-height:normal;
+    color:black
+}
+#cdn_stats div.settings button, #cdn_stats div.settings span {
+    display:none;
+    margin:0 5px;
+    position:relative
+}
+#cdn_stats div.settings button input, #cdn_stats div.settings span input {
+    display:none;
+    position:absolute;
+    top:0;
+    left:0
+}
+#cdn_stats div.settings button {
+    border-radius:4px;
+    border:1px solid #222
+}
+#cdn_stats div.settings label {
+    color:rgba(255, 255, 255, 0.5);
+    cursor:pointer
+}
+#cdn_stats div.settings #tl_info {
+    color:#ff0;
+    float:right;
+    text-shadow:-1px 0 .5px rgba(45, 64, 76, 0.5), -1px 1px .5px rgba(45, 64, 76, 0.5), 0 1px .5px rgba(45, 64, 76, 0.5), 1px 1px .5px rgba(45, 64, 76, 0.5), 1px 0 .5px rgba(45, 64, 76, 0.5), 1px -1px .5px rgba(45, 64, 76, 0.5), 0 -1px .5px rgba(45, 64, 76, 0.5), -1px -1px .5px rgba(45, 64, 76, 0.5)
+}
+#cdn_stats #gr_tools:checked~div.settings button, #cdn_stats #gr_tools:checked~div.settings span {
+display:inline-block
+}
+#cdn_stats #gr_tools:checked~div.settings button#disengage, #cdn_stats #gr_tools:checked~div.settings span#disengage {
+opacity:.5;
+pointer-events:none
+}
+#cdn_stats #gr_tools:checked~div.settings label:before {
+color:#c00000;
+content:'recording:off';
+float:right
+}
+#cdn_stats #gr_tools:checked~div.settings label[data-filename]:before {
+color:#00c0c0;
+content:'loaded:\00a0' attr(data-filename)
+}
+#cdn_stats #gr_tools:checked~div.settings label:after {
+color:#0080ff;
+content:'\00a0';
+float:right
+}
+#cdn_stats[data-collecting] #gr_tools:checked~div.settings label:before {
+color:#00c000;
+content:'recording:on';
+float:right
+}
+#cdn_stats[data-collecting] #gr_tools:checked~div.settings button#disengage {
+opacity:1;
+pointer-events:auto
+}
+#cdn_stats[data-collecting] #gr_tools:checked~div.settings button#import, #cdn_stats[data-collecting] #gr_tools:checked~div.settings button#tl_replay, #cdn_stats[data-collecting] #gr_tools:checked~div.settings button#tl_stop {
+opacity:.5;
+pointer-events:none
+}
+#cdn_stats[data-collecting][data-simulating] div.notice {
+    display:block
+}
+#cdn_stats[data-collecting][data-simulating] #gr_tools:checked~div.settings label:before {
+color:#c0c000;
+content:'simulation';
+float:right
+}
+#cdn_stats[data-collecting][data-simulating] #gr_tools:checked~div.settings button#disengage {
+opacity:.5;
+pointer-events:none
+}
+#cdn_stats[data-collecting][data-simulating] #gr_tools:checked~div.settings button#import, #cdn_stats[data-collecting][data-simulating] #gr_tools:checked~div.settings button#export, #cdn_stats[data-collecting][data-simulating] #gr_tools:checked~div.settings button#tl_replay, #cdn_stats[data-collecting][data-simulating] #gr_tools:checked~div.settings button#tl_stop {
+opacity:.5;
+pointer-events:none
+}
+#cdn_stats.below_controls {
+    z-index:1;
+    background:transparent;
+
+}
+#cdn_stats.flex {
+    display:flex;
+    flex-direction:column-reverse
+}
+#cdn_stats:not([data-collecting]) {
+background:black;
+z-index:4;
+pointer-events:auto
+}
+#cdn_stats .total_progress {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:25px;
+    text-shadow:-1px 0 .5px rgba(45, 64, 76, 0.5), -1px 1px .5px rgba(45, 64, 76, 0.5), 0 1px .5px rgba(45, 64, 76, 0.5), 1px 1px .5px rgba(45, 64, 76, 0.5), 1px 0 .5px rgba(45, 64, 76, 0.5), 1px -1px .5px rgba(45, 64, 76, 0.5), 0 -1px .5px rgba(45, 64, 76, 0.5), -1px -1px .5px rgba(45, 64, 76, 0.5);
+    background:rgba(45, 64, 76, 0.7) !important;
+}
+#cdn_stats .dataflow {
+    position:absolute;
+    top:25px;
+    left:0;
+    right:0;
+    height:175px;
+    text-shadow:-1px 0 .5px rgba(45, 64, 76, 0.5), -1px 1px .5px rgba(45, 64, 76, 0.5), 0 1px .5px rgba(45, 64, 76, 0.5), 1px 1px .5px rgba(45, 64, 76, 0.5), 1px 0 .5px rgba(45, 64, 76, 0.5), 1px -1px .5px rgba(45, 64, 76, 0.5), 0 -1px .5px rgba(45, 64, 76, 0.5), -1px -1px .5px rgba(45, 64, 76, 0.5);
+    background:rgba(45, 64, 76, 0.7);
+    line-height:21px;
+    font-family:'Noto Sans', sans-serif;
+    font-size:12px;
+    font-weight:normal
+}
+#cdn_stats .dataflow[data-lanes='2'] {
+    line-height:63px
+}
+#cdn_stats .dataflow[data-lanes='3'] {
+    line-height:42px
+}
+#cdn_stats .dataflow[data-lanes='4'] {
+    line-height:31.5px
+}
+#cdn_stats .dataflow[data-lanes='5'] {
+    line-height:25.2px
+}
+#cdn_stats .dataflow[data-lanes='6'] {
+    line-height:21px
+}
+#cdn_stats .dataflow[data-lanes='7'] {
+    line-height:18px
+}
+#cdn_stats .dataflow[data-lanes='8'] {
+    line-height:15.75px;
+    font-size:10px
+}
+#cdn_stats .dataflow[data-lanes='9'] {
+    line-height:14px;
+    font-size:9px
+}
+#cdn_stats .dataflow[data-new='progress'] {
+    /*top:20px;*/
+    /*left:15px;*/
+    /*right:15px;*/
+    text-shadow:-1px 0 5px rgba(45, 64, 76, 0.5), -1px 1px 5px rgba(45, 64, 76, 0.5), 0 1px 5px rgba(45, 64, 76, 0.5), 1px 1px 5px rgba(45, 64, 76, 0.5), 1px 0 5px rgba(45, 64, 76, 0.5), 1px -1px 5px rgba(45, 64, 76, 0.5), 0 -1px 5px rgba(45, 64, 76, 0.5), -1px -1px 5px rgba(45, 64, 76, 0.5);
+    font-size:14px
+}
+#cdn_stats .dataflow[data-new='progress'] .sources {
+    min-width:205px
+}
+.vjs-hola-skin #cdn_stats .dataflow[data-new='progress'], .vjs-default-skin #cdn_stats .dataflow[data-new='progress'] {
+    left:0;
+    right:0;
+    bottom:50px
+}
+.vjs-hola-skin #cdn_stats .dataflow[data-new='progress'] {
+    left:7px;
+    right:7px
+}
+#cdn_stats .dataflow svg {
+    position:absolute;
+    top:0;
+    width:100%;
+    height:175px;
+    overflow:visible;
+}
+#cdn_stats .dataflow svg .grid path {
+    stroke:#5a5858;
+    stroke-dasharray:6, 6;
+    stroke-width:1;
+    fill:none
+}
+#cdn_stats .dataflow svg #wires path {
+    stroke:#fff;
+    stroke-width:1
+}
+#cdn_stats .dataflow svg .bubble path, #cdn_stats .dataflow svg .bubble rect {
+    fill:rgba(45, 64, 76, 0.7);
+    stroke:#fff;
+    stroke-width:1
+}
+#cdn_stats .dataflow svg .bubble rect {
+    transform:translate(-90px)
+}
+#cdn_stats .dataflow svg .bubble text {
+    fill:#fff;
+    stroke:none
+}
+#cdn_stats .dataflow svg .bubble.own text, #cdn_stats .dataflow svg .bubble.own_progress text, #cdn_stats .dataflow svg .bubble.own_current text {
+    fill:#00b7f1
+}
+#cdn_stats .dataflow svg .bubble.origin text, #cdn_stats .dataflow svg .bubble.origin_progress text, #cdn_stats .dataflow svg .bubble.origin_current text {
+    fill:#ef6153
+}
+#cdn_stats .dataflow svg .bubble circle {
+    fill:none;
+    stroke:#fff
+}
+#cdn_stats .dataflow svg .chunks path {
+    stroke-width:24;
+    stroke-linecap:butt;
+    fill:none
+}
+#cdn_stats .dataflow svg .chunks path#origin {
+    fill:#ef6153;
+    stroke-width:0;
+    fill-opacity:.8
+}
+#cdn_stats .dataflow svg .chunks path#own, #cdn_stats .dataflow svg .chunks path#cache {
+    fill:#00b7f1;
+    fill-opacity:.8;
+    stroke-width:0;
+}
+#cdn_stats .dataflow svg .chunks path#origin_progress {
+    stroke-width:0
+}
+#cdn_stats .dataflow svg .chunks path#own_progress {
+    stroke-width:0
+}
+#cdn_stats .dataflow svg .chunks path#origin_current {
+    stroke-width:0;
+    fill:#ff9486
+}
+#cdn_stats .dataflow svg .chunks path#own_current {
+    stroke-width:0;
+    fill:#33eaff
+}
+#cdn_stats .dataflow svg .chunks path#aborted {
+    fill:#777;
+    fill-opacity:.8
+}
+#cdn_stats .dataflow svg .chunks path#error {
+    fill:#dd0
+}
+#cdn_stats .dataflow svg .progress path {
+    stroke-width:125;
+    stroke-linecap:butt;
+    fill:none
+}
+#cdn_stats .dataflow svg .progress path#viewed {
+    stroke:rgba(255, 255, 255, 0.2)
+}
+#cdn_stats .dataflow svg .progress path#seekpos {
+    stroke:rgba(255, 255, 255, 0.9)
+}
+#cdn_stats .dataflow .sources {
+    position:absolute;
+    top:0;
+    right:10px;
+    min-width:255px;
+
+    z-index:10;
+    text-align:left
+}
+#cdn_stats .dataflow .sources .srcrow.hola_cdn {
+    color:#00b7f1;
+    opacity:1;
+    line-height:25px;
+}
+#cdn_stats .dataflow .sources .srcrow.other_cdn {
+    color:#ef6153;
+    opacity:1;
+    line-height:25px;
+
+}
+#cdn_stats .dataflow .sources .srcrow:after {
+    float:right;
+    width:75px;
+    display:inline-block;
+    content:attr(data-kb);
+    text-align:right
+}
+#cdn_stats .dataflow .sources .srcrow:before {
+    content:attr(data-percent) '%';
+    text-align:right;
+    float:right;
+    width:55px
+}
+
+#cdn_stats .dataflow .sources_checkbox {
+    position:absolute;
+    top:0;
+    left:5px;
+    z-index:100;
+    text-align:left;
+    pointer-events:auto;
+}
+#cdn_stats .dataflow .sources_checkbox .srcrow {
+    height:25px;
+    pointer-events:auto;
+}
+
+#cdn_stats .dataflow .sources .srcrow:first-child {
+    font-weight: bold;
+}
+
+#cdn_stats .dataflow .sources_checkbox span.cdn_switch {
+    pointer-events:auto;  
+}
+#cdn_stats .dataflow .sources_checkbox span.cdn_switch:before{
+    position: absolute;
+    pointer-events: auto;
+    cursor: pointer;
+    /*top: calc(50% - 5px);*/
+    left: 0;
+    height: 12px;
+    width: 25px;
+    border-radius: 6px;
+    content: '';
+    border: 1px solid #fff;
+    background: #ccc;
+    margin-top: 6px;
+    transition: box-shadow 200ms linear;
+}
+#cdn_stats .dataflow .sources_checkbox span.cdn_switch[data-on='true']:before {
+    box-shadow: 10px 0 0 0 #0b0 inset;
+}
+#cdn_stats .dataflow .sources_checkbox span.cdn_switch[data-on='false']:before {
+    box-shadow: -10px 0 0 0 #b00 inset;
+}
+/*#cdn_stats .dataflow .sources_checkbox .srcrow .ckbox {
+    z-index:100;
+    pointer-events:auto;
+}*/
