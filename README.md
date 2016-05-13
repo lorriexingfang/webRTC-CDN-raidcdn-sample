@@ -45,8 +45,8 @@ The fourth open browser.
 
 ## 3. Implementation
 
-1. [**Sign up**] (http://accountsmgr.raidcdn.com/) to RAID CDN. Get instant access to your RAID CDN token. 
-2. Install Node.js [**From Node.js**] (https://nodejs.org/)
+1\. [**Sign up**] (http://accountsmgr.raidcdn.com/) to RAID CDN. Get instant access to your RAID CDN token. 
+2\. Install Node.js [**From Node.js**] (https://nodejs.org/)
 
 For Ubuntu/Debian user:
 
@@ -56,19 +56,19 @@ $ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
 ```
 
-3. Install http-server
+3\. Install http-server
 
 ```
 $ sudo npm install -g http-server
 ```
-4. Clone this sample code, unzip it to any place, and modify the token by editting index.html:
+4\. Clone this sample code, unzip it to any place, and modify the token by editting index.html:
 
 ```
 <script>token = 'TOKEN VALUE'; trafficDisplay = true; </script>
 ```
 replace 'TOKEN VALUE' with the token you registered on 1.
 
-5. Enter the unzipped sample folder, and run your local video server:
+5\. Enter the unzipped sample folder, and run your local video server:
 
 ```
 $ cd raidcdn-sample
@@ -77,7 +77,7 @@ $ http-server
 
 Done! Now the set up work is finished.
 
-6. To experience it, please open your local browser and visit:
+6\. To experience it, please open your local browser and visit:
 
 ```
 http://localhost:8080
@@ -87,7 +87,7 @@ You can play the video on your local video serer.
 
 Then if you open a new tab on your browser, you will see the current video you are watching fetches video chunk from the previous open one. And if you open more tabs, you will find there are multiple nodes (current opened browser) which provide video chunks to the one your are viewing.
 
-7. To view how much data RAID CDN helps you saved, please log in to http://accountsmgr.raidcdn.com/, click "Total" on left column and you will see:
+7\. To view how much data RAID CDN helps you saved, please log in to http://accountsmgr.raidcdn.com/, click "Total" on left column and you will see:
 
 ![Demo ScreenShot](http://zifacdn.oss-cn-hangzhou.aliyuncs.com/total_usage.png)
 
