@@ -12,7 +12,7 @@ by [@RAID CDN Developper](http://demo-cloud.apps.58dahuo.com),
 ## 0. Index
 
 1. [Description](#1-description)
-2. [Demo Screenshots](#2-screenshots)
+2. [Demos](#2-demos)
 3. [Implementation](#3-implementation)
 4. [License](#4-license)
 
@@ -26,7 +26,7 @@ To provide an easy and straightforward way for how does RAIDCDN save bandwidth, 
 
 RAIDCDN also offers a commercial CDN service, specifically designed for video delivery. For more information about how to implement RAID CDN on your site, please get in touch with us.
 
-## 2. Demo Screenshots
+## 2. Demos
 The first open browser fetches data from its original source.
 
 ![Demo ScreenShot](http://zifacdn.oss-cn-hangzhou.aliyuncs.com/sample_snapshot_1_1.png)
