@@ -19,6 +19,7 @@ by [@RAID CDN Developper](http://demo-cloud.apps.58dahuo.com),
 ## 1. Description
 
 RAID CDN uses web browser based P2P technology to break free from traditional CDN infrastructures.
+It is a hybrid solution of WebRTC, P2P, CDN, and hls for saving cost of video service provider.
 Drop one line of JavaScript on your video page, you are able lower the cost of your video delievery.
 No matter what kind of video, origin or CDN(s) you use - RAIDCDN can provide answers.
 
