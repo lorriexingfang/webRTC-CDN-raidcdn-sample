@@ -45,6 +45,20 @@ The fourth open browser.
 ![Demo ScreenShot](http://zifacdn.oss-cn-hangzhou.aliyuncs.com/sample_snapshot_1_4.png)
 
 ## 3. Implementation
+(We provide a VirtualBox Image for this demo in case you do not want to follow all the steps. You can:
+
+a) Download image from [**Demo Image**] (http://pan.baidu.com/s/1b0IlP0)
+
+b) The login username/password is demo/demo. Defaulty you can log in without them
+
+c) After it launches, 
+
+```
+$ cd /home/demo/workspace/webRTC-CDN-raidcdn-sample folder
+$ http-server
+```
+
+d) Now the sample video streaming server is running with RAIDCDN gearing up. Visit its host 8080 port (http://localhost:8080) to see the magic of RAIDCDN)
 
 1\. [**Sign up**] (http://accountsmgr.raidcdn.com/) to RAID CDN. 
 
@@ -75,7 +89,7 @@ replace 'TOKEN VALUE' with the token you registered on 1.
 5\. Enter the unzipped sample folder, and run your local video server:
 
 ```
-$ cd raidcdn-sample
+$ cd webRTC-CDN-raidcdn-sample
 $ http-server
 ```
 
