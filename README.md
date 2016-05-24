@@ -46,6 +46,7 @@ The fourth open browser.
 
 ## 3. Implementation
 We provide a VirtualBox Image for this demo in case you do not want to follow all the steps. You can:
+
 a) Install VirtualBox from [**VirtualBox Installation] (https://www.virtualbox.org/wiki/Downloads)
 
 b) Download image from [**Demo Image**] (http://pan.baidu.com/s/1b0IlP0). Import and launch it using your VirtualBox
